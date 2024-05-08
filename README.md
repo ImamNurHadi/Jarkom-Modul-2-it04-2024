@@ -614,7 +614,9 @@ ServerName 127.0.1.1.
 lalu jalankan ```a2enmod rewrite``` dan bisa untuk meresart service apache2
 
 ### FOTO Akses
-
+![fa18(1).png](FOTO/fa18(1).png)
+![fa18(2).png](FOTO/fa18(2).png)
+![fa18(3).png](FOTO/fa18(3).png)
 
 
 
