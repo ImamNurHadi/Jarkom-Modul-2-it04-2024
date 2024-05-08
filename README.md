@@ -69,3 +69,4 @@ lalu dapat kita test dengan menjalankan ```lynx http://localhost:8080```
 dan hasilnya sebagai sebagai berikut 
 
 #### FOTO
+![lynxlocalhostxxxx.jpg](FOTO/lynxlocalhostxxxx.jpg)
