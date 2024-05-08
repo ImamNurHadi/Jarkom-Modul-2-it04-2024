@@ -205,4 +205,4 @@ Exiting via interrupt: 2
 ### FOTO Konfigurasi
 ![fk16.jpg](FOTO/fk16.jpg)
 ### Foto Akses ke Mylta 
-![fa16.jpg](FOTO/fa16.jpg)
+![fa16.png](FOTO/fa16.png)
