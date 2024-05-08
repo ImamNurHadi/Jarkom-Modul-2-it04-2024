@@ -132,5 +132,74 @@ lalu kita jalankan ```lynx http://192.168.2.5/index.php```
 ### FOTO
 
 ## Soal 16
+Karena dirasa kurang aman karena masih memakai IP, markas ingin akses ke mylta memakai mylta.xxx.com dengan alias www.mylta.xxx.com (sesuai web server terbaik hasil analisis kalian)
+
+Untuk mengatur akses ke mylta tidak hanya memakai IP saja, maka kita perlu mengatur konfigurasi pada **POCHINKI** sebagai master. Untuk mengonfigurasinya, kita perlu mennambahkan mylta.it04.com pada ```nano /etc/bind/named.conf.local``` sebagai berikut 
+
+```shell
+zone "airdrop.it04.com" {
+    type master;
+    also-notify { 192.168.1.3; };
+    allow-transfer { 192.168.1.3; };
+    file "/etc/bind/zone/airdrop.it04.com";
+};
+
+zone "redzone.it04.com" {
+    type master;
+    also-notify { 192.168.1.3; };
+    allow-transfer { 192.168.1.3; };
+    file "/etc/bind/zone/redzone.it04.com";
+};
+
+zone "3.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/zone/3.168.192.in-addr.arpa";
+};
+
+zone "loot.it04.com" {
+    type master;
+    file "/etc/bind/delegasizone/loot.it04.com";
+};
+
+zone "mylta.it04.com" {
+    type master;
+    file "/etc/bind/zone/mylta.it04.com";
+};
+````
+setelah itu, kita perlu meemrubah akes dengan IP menjadi nameservernya dan aliasnya (wwww) pada ```/etc/bind/zone/mylta.it04.com``` seperti berikut :
+
+```shell
+
+$TTL    604800
+@       IN      SOA     mylta.it04.com. root.mylta.it04.com. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      mylta.it04.com.
+@       IN      A       192.168.2.5
+@       IN      AAAA    ::1
+www     IN      CNAME   mylta.it04.com.
+
+```
+
+lalu kita tinggal menuju **mylta** dan mencoba untuk melakukan ```service apache reload``` dan ```service apache2 restart```
+maka kita sudah dapat mengakses mylta menggunakan nameservernya seperti berikut 
+```shell
+
+root@Rozhok:~# lynx http://mylta.it04.com/index.php
+
+
+Exiting via interrupt: 2
+
+root@Rozhok:~# lynx http://www.mylta.it04.com/index.php
+
+
+Exiting via interrupt: 2
+```
+
 ### FOTO lynx
+![lynxlocalhostxxxx.jpg](FOTO/lynxlocalhostxxxx.jpg)
 ### FOTO Konfigurasi
