@@ -267,3 +267,48 @@ jika sudah maka mylta.it04 dapat berjalan seperti berikut :
 ![fa17(1).png](FOTO/fa17(1).png)
 ![fa17.png](FOTO/fa17.png)
 ![fa17(2).png](FOTO/fa17(2).png)
+
+## SOAL 18
+Apa bila ada yang mencoba mengakses IP mylta akan secara otomatis dialihkan ke www.mylta.xxx.com
+
+mengonfigurasi reverse DNS pada zone Mylta pada **POCHINKI** dengan menambahkan terlebih dahulu pada ```/etc/bind/named.conf.local```
+
+```shell
+
+zone "5.2.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/zone/5.2.168.192.in-addr.arpa";
+};
+
+```
+
+lalu kita perlu mengonfigurasi file tersebut ``` file "/etc/bind/zone/5.2.168.192.in-addr.arpa";```
+agar lebih mudah kita tinggal copy dengan konfigurasi mylta sebelumnya ```cp /etc/bind/zone/mylta.it04.com /etc/bind/zone/5.2.168.192.in-addr.arpa```
+
+dengan hasil konfigurasi ``` nano /etc/bind/zone/5.2.168.192.in-addr.arpa``` sebagai berikut :
+
+```shell
+
+
+$TTL    604800
+@       IN      SOA     mylta.it04.com. root.mylta.it04.com. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      mylta.it04.com.
+@       IN      A       192.168.2.5
+@       IN      AAAA    ::1
+www     IN      CNAME   mylta.it04.com.
+
+```
+dan saat kita run ```  lynx http://192.168.2.5:14400/index.php ``` maka hasilnya seperti berikut 
+### FOTO Akses
+
+
+
+
+
+
