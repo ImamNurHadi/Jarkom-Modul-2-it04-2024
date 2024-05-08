@@ -201,5 +201,8 @@ Exiting via interrupt: 2
 ```
 
 ### FOTO lynx
-![lynxlocalhostxxxx.jpg](FOTO/lynxlocalhostxxxx.jpg)
+![fr16.jpg](FOTO/fr16.jpg)
 ### FOTO Konfigurasi
+![fk16.jpg](FOTO/fk16.jpg)
+### Foto Akses ke Mylta 
+![fa16.jpg](FOTO/fa16.jpg)
