@@ -263,4 +263,7 @@ Pada perubahan tersebut kita hanya mengganti ```<VirtualHost *:14400>``` dan beb
 setelah itu kita run command ```service apache2 restart``` dan jika diperlukan run command ```service apache2 reload``` agar dapat berjaland engan konfigurasi apache2 terbaru
 
 jika sudah maka mylta.it04 dapat berjalan seperti berikut :
-
+### Foto Akses
+![fa17(1).png](FOTO/fa17(1).png)
+![fa17.png](FOTO/fa17.png)
+![fa17(2).png](FOTO/fa17(2).png)
