@@ -130,3 +130,7 @@ lalu kita jalankan ```lynx http://192.168.2.5/index.php```
 
 ### FOTO
 ### FOTO
+
+## Soal 16
+### FOTO lynx
+### FOTO Konfigurasi
