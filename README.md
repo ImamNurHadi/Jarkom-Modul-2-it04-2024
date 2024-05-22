@@ -1,6 +1,6 @@
 | Nama    | NRP     | 
 | ------- | ------- | 
-| Imam Nurhadi    | 50272210     | 
+| Imam Nurhadi    | 5027221046     | 
 | Jojo     | 5027221062     |
 
 ## SOAL 1
